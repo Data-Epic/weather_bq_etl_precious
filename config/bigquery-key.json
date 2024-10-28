@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "weather-pipeline-12",
+  "private_key_id": "6dda8339887620a6d31918c0db3df936a9ca0911",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCsFPjIKNXcIBt7\nPVGvsxNpdMRPxrv4hwAYX+CrDlvO28IDciAgRBviHEyjZzaemlyUu2RvDl71lcZ0\nwKh1xmw/woEw6BmhoYjnR4YtSk3rKg5AEhumyp1x0r/nfLWLS0TR+k57AcxneiNl\nNUtA0De4ZqqbZV3weOhBj6A0Hvcj0ePWLD1Ov3J5JOm5IomGHG1Q20mkv2eCqVO3\n8HlMS9KAH6vJLavYX/RghYwb5jKEBLDy/vqBl28hQ4vggdM0+neRPmMtGnfiXJoD\nARV1VQpslVcfcD9KqTuize2ivcJL15le8QbRbIKxhs638Jtidr6NWb7wVmeq4L8P\nphok2jgzAgMBAAECggEAHHIdC+1gKNKv6EfjJHGsQE76kptuAC/EzsKun2gwufmu\n0SYA9IR9vXtjGdHagA5RRo7Rk+Aix2L6WttsHYfu5f1PoNeFQSg0OtMidYMmbTzW\n/TVhF8m/jAzEB06grgWDu1gut/u8n9BbYIQWTAD/bP6fri9r/2/lKM1GtMb3oJZw\nc9X7uHShYcPgIOuC9Jd6TtqVkoTkVKsdXN+O/ThCYOLV/4cToxZMC9dIRAb6GrCw\ny8yjTdBdOzHV+LmmW5h7+FJPEg45zH+BlAXEXxony9LHhbKoaeXHl+uNU/NdaAk9\nR6pPUBHQEqKHrXR8RpUFkYkpEz2TxJ4p4iePZXUwyQKBgQDlK+DCpO7UWeAwPjWV\nsBZf4AZsWPfQesXcpJh6tMhfVjHOHFwnDPlqhCn7UMdozqOailu0AItptX3H/wRO\nXf/y0wi0ZH9IO8XoG2fmBNQ9Jci7tWnB7k7egD76diCwWfYusQqZd9soRU/lvSWV\niGHsfHj5UtmUjQSLo+t80Um4SwKBgQDAOiiEQjwLmrIfvt8bppxeLZHx4zE7ta39\nIZIzDnyYP47Hp54zj6cR6+AF+CRrsOTyDbirmJo9XVUvnEMdSRfy2n0bswlUtbFu\nUi/d+gsT3G/fiolaLHwq1Tx8WUU9P/m/ogMLSVq3Ys6iLu4AkaKiiDHALrpw1Ur0\n4Bwr5mneuQKBgC3P2K1wZSHkGZHrTbDvs3lVAlO0cU2mzVjvOmAFNa0BQRGPz8gq\nqs1lQDMyEbrc3A2vrOdN2JC4LD3Ht+emmNzE3Q+aq2sYL9bXa6yquHbEz9zeRhbz\neaa3Al/1L1Gxmin5UEIfmJrzSCaH6jR7QAATXeeRbVdp3UfA6/lWqSMDAoGAOAZ7\nWpjnYUZ0FfaOlkOIHZbQi5x48/suu7E2KDVXsRQNLDm5TTPYMMv7niHFk7GZ+MZx\nBWpTwgDa3CaCFR4BoeF2R0V2Ob8++HVxyBOheOdtn8yD3clLYzyFBYULPh/QTb8N\nfhOiIgLlULW23mmT6iUhwu6bnlk8IITVESJ1xtkCgYAlHq5v6GHgCK6xTyVoksCg\n9ch0wDadxfwBt3L0wMfCDCysfePZRjE5cFagP3DawczeNLO7K6eT2wSxPNjn1mw8\ntx6Fngj5JlmeO/wNOwgpD94/gaZXXFpx8snbWTd+rloTJJlL8uwnvutPB1UPgzeC\npDuisY/NU3um1zHtFvm9Dw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dag-57@weather-pipeline-12.iam.gserviceaccount.com",
+  "client_id": "102041960576367728236",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dag-57%40weather-pipeline-12.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

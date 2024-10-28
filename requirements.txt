@@ -1,0 +1,8 @@
+sqlalchemy==1.4.54
+pandas==2.2.2
+pre-commit==3.8.0
+pytest
+python-dotenv
+ratelimit
+google-cloud-bigquery
+google-auth
