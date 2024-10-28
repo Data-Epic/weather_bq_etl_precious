@@ -66,7 +66,8 @@ The fetched data is normalized up to 3NF and  then loaded into BigQuery. And the
      - `weather_etl_dag` dag fetches the weather data for the cities in the `cities. The DAG include tasks for each step in the process:
        1. **Fetch Weather Data**: Download weather data for specified cities.
        2. **Transform & Normalize**: Split and structure the data into normalized tables.
-       3. **Load to BigQuery**: Load normalized data tables into BigQuery.
+       3. **Load to BigQuery**: Load normalized data tables into BigQuery. The tables here are clustered and partitioned by date for efficient querying.
+
    - **Execution Frequency**: The DAG is scheduled to run at hourly intervals for consistent data updates.
 
 
