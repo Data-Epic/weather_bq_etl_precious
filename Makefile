@@ -2,7 +2,6 @@ export AIRFLOW_HOME:=$(shell pwd)/airflow_home
 export AIRFLOW__CORE__LOAD_EXAMPLES=False
 export AIRFLOW__CORE__DAGS_FOLDER:=$(shell pwd)/dags
 export PYTHONPATH:=$(shell pwd)
-export GOOGLE_APPLICATION_CREDENTIALS:="$(shell pwd)/config/bigquery-key.json"
 
 # Load environment variables from .env file
 ifneq (,$(wildcard .env))

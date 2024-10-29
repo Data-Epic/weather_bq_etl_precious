@@ -103,3 +103,5 @@ airflow_home/
 # others
 data/
 *.ipynb
+*.csv
+*.json

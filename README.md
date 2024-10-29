@@ -149,7 +149,14 @@ You need a list of cities to fetch weather data for. You can get the list from [
 mkdir -p dags/data && curl -o city.list.json.gz http://bulk.openweathermap.org/sample/city.list.json.gz && gunzip -c city.list.json.gz > dags/data/city.list.json && rm city.list.json.gz
 ```
 
-#### 5. Build and start containers
+#### 5. Set up BigQuery
+- Create a new project in the Google Cloud Console, copy the project id and  update the `dags/scripts/bq_table_config.py` file with your project id.
+- Create a service account and add a key
+- Download the service account key, rename it to `bigquery-key.json` and add it to the `config` folder.
+- Create a new dataset in BigQuery called `weather_data`.
+- Create the tables  in BigQuery by copying the SQL query in `create_tables.sql` and running it in  the BigQuery console.
+
+#### 6. Build and start containers
 
 Make sure you have **Docker** and **Docker-Compose** installed. Then, build and start the Docker containers:
 
@@ -163,7 +170,7 @@ This will initialize the Airflow services like the Airflow webserver.
 ![Airflow Web UI](images/web_ui.png)
 
 
-#### 6. Running the Project
+#### 7. Running the Project
 
 Once the Docker containers are running, access the Airflow web UI at: [http://localhost:8080](http://localhost:8080).
 
@@ -182,7 +189,7 @@ Once the Docker containers are running, access the Airflow web UI at: [http://lo
    ![weather ETL DAG](images/weather_dag.png)
 
 
-#### 7. Querying the  BigQuery weather dataset using gcloud cli
+#### 8. Querying the  BigQuery weather dataset using gcloud cli
 To query the BigQuery dataset:
 - Open a new terminal window and  run:
  ```bash
@@ -196,13 +203,13 @@ gcloud config set project weather-pipeline-12
 - Run your queries, for example:
 ```sql
 -- list ten rows in cities table
-bq query --use_legacy_sql=false 'SELECT * FROM `weather-pipeline-12.weather_data.cities` LIMIT 10'
+bq query --use_legacy_sql=false 'SELECT * FROM `{project_id}.weather_data.cities` LIMIT 10'
 
 -- fetch average temperature for 10 cities in NG
-bq query --use_legacy_sql=false 'SELECT wr.id, c.city, AVG(t.temp) AS avg_temp  FROM `weather-pipeline-12.weather_data.weather_record` wr JOIN `weather-pipeline-12.weather_data.cities` c ON wr.city_id = c.id JOIN `weather-pipeline-12.weather_data.temperature` t ON  wr.temp_id = t.id WHERE c.country = "NG" GROUP BY wr.id, c.city ORDER BY avg_temp LIMIT 10'
+bq query --use_legacy_sql=false 'SELECT wr.id, c.city, AVG(t.temp) AS avg_temp  FROM `{project_id}.weather_data.weather_record` wr JOIN `{project_id}.weather_data.cities` c ON wr.city_id = c.id JOIN `{project_id}.weather_data.temperature` t ON  wr.temp_id = t.id WHERE c.country = "NG" GROUP BY wr.id, c.city ORDER BY avg_temp LIMIT 10'
 
 -- Average Wind Speed for Each City in NG
-gcloud bigquery query --use_legacy_sql=false 'SELECT c.city, AVG(w.wind_speed) AS avg_wind_speed FROM `weather-pipeline-12.weather_data.weather_record` wr JOIN `weather-pipeline-12.weather_data.cities` c ON wr.city_id = c.id JOIN `weather-pipeline-12.weather_data.wind` w ON wr.wind_id = w.id WHERE c.country = "NG" GROUP BY c.city ORDER BY avg_wind_speed DESC'
+gcloud bigquery query --use_legacy_sql=false 'SELECT c.city, AVG(w.wind_speed) AS avg_wind_speed FROM `{project_id}.weather_data.weather_record` wr JOIN `{project_id}.weather_data.cities` c ON wr.city_id = c.id JOIN `{project_id}.weather_data.wind` w ON wr.wind_id = w.id WHERE c.country = "NG" GROUP BY c.city ORDER BY avg_wind_speed DESC'
 ```
 -  Exit the shell:
 ```
@@ -213,7 +220,7 @@ exit
   ![cities table](images/result.png)
 
 
-#### 7. Shutting down services and Cleaning up
+#### 9. Shutting down services and Cleaning up
 To stop the services, run:
 
 ```bash

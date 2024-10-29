@@ -19,7 +19,6 @@ jobs:
       DB_URL: "sqlite:///:memory:"
       API_KEY: ${{ secrets.TEST_API_KEY }}
       PYTHONPATH: ${{ github.workspace }}
-      GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/config/bigquery-key.json
 
 
     steps:
@@ -55,3 +54,8 @@ jobs:
         airflow dags list
         airflow tasks list weather_etl_dag
         airflow tasks list update_city_csv
+
+    - name: Clean up Google credentials
+      if: always()
+      run: |
+        rm -f ${{ github.workspace }}/config/bigquery-key.json
